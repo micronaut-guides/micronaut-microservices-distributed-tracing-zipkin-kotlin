@@ -45,14 +45,14 @@ Disable distributed tracing in tests:
 include::{sourceDir}/bookinventory/src/main/resources/application-test.yml[tag=zipkin]
 ----
 
-Annotate `BookController` method with `@ContinueSpan` and the method parameter with `@SpanTag`:
+Annotate `BooksController` method with `@ContinueSpan` and the method parameter with `@SpanTag`:
 
 [source,java]
 .bookinventory/src/main/java/example/micronaut/bookinventory/BooksController.java
 ----
-include::{sourceDir}/bookinventory/src/main/java/example/micronaut/bookinventory/BooksController.java[]
+include::{sourceDir}/bookinventory/src/main/kotlin/example/micronaut/bookinventory/BooksController.kt[]
 ----
 
 <1> The `@ContinueSpan` annotation will continue an existing span, wrapping the method call or reactive type.
-<2> The `@SpanTag` annotation can be used on method arguments to include the value of each argument within a Span's tags. When you use `@SpanTag` you need either to annotate the method with `@NewSpan` or `@ContinueSpan``
+<2> The `@SpanTag` annotation can be used on method arguments to include the value of each argument within a Span's tags. When you use `@SpanTag` you need either to annotate the method with `@NewSpan` or `@ContinueSpan`
 
