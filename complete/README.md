@@ -1,11 +1,15 @@
 # Tests 
 
+## To run tests:
+
+./gradlew test
+
+## To run acceptance test
+
+Run Consul.
+
 ./gradlew run -parallel 
 
 Open a new terminal:
 
-./gradlew test
-
-or simple run the bash script:
-
-./runtests.sh
+./gradlew acceptancetest:test
